@@ -1,0 +1,41 @@
+img{
+    width: 200px;
+    height:200px;
+}
+
+.red{
+    color:red;
+}
+
+.size20{
+    font-size: 20px;
+}
+
+.active{
+    color:white;
+    background-color: blue;
+}
+
+.inactive{
+    color:white;
+    background-color: grey;
+}
+
+.green{
+    color:green;
+}
+
+.highlight{
+    background-color: yellow;
+    font-weight: bolder;
+}
+
+.in-stock{
+    color:green;
+    font-size: 30px;
+}
+
+.out-of-stock{
+    color:grey;
+    font-size: 30px;
+}

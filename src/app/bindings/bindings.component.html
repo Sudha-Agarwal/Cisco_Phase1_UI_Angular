@@ -1,0 +1,42 @@
+<app-home [message1] = "parentMessage" (messageSent) = "onMsgRcvd($event)" #child></app-home>
+<button (click) = "callChildMethod()">Child method</button>
+<!-- String interpolation (one way)-->
+<h1>Welcome to my {{title}}</h1>
+
+<!-- Property Binding-->
+<img [src]="imgSrc">
+
+<button [disabled] = "isNotValid" (click) = "buttonClicked()">Click me</button>
+
+<a [href] = "externalLink">Example.com</a>
+
+<p [textContent] = "displayText"></p>
+
+<div [className] = "'red size20'">Test</div>
+
+<div [class.active] = "isActive">Active Class</div>
+
+<div [class.active] = "isActive" [class.inactive] = "!isActive">Active/Inactive</div>
+
+<div [className] = "hasError() ? 'red':'green'">Conditional Class</div>
+
+<div [style.backgroundColor] = "'red'">Style Binding</div>
+
+<div [style.color] = "hasError()? 'red': 'green'">Conditional Styling</div>
+
+<!-- Attribute Directive-->
+<div [ngStyle] = "{'color': textColor, 'font-size' : fontSize}">ngStyle</div>
+
+<div [ngClass] = "{'highlight' : isHighlighted, 'class2':true}">ngClass</div>
+
+<div class="card" *ngFor="let product of products">
+    
+    <div class="card-body">
+        <p>{{product.description}}</p>
+    </div>
+    <div class="card-footer">
+        <div [ngClass] = "{'in-stock': isInStock(product), 'out-of-stock': !isInStock(product)}">
+            {{isInStock(product) ? 'In Stock': 'Out of Stock'}}
+        </div>
+    </div>
+</div>

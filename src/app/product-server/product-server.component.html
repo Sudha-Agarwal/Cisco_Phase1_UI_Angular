@@ -1,0 +1,35 @@
+<h1>{{title}}</h1>
+
+<button class="btn btn-primary" (click) = "backToHome()">Back to Home</button>
+<button (click) = "toggleVisibility()">Click</button>
+
+<ng-container *ngIf="products.length>0; then showdata else noData"></ng-container>
+    <ng-template #showdata>
+        <table class="table table-bordered table-striped w-50 m-auto">   
+            <thead>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products; index as i; let isLast=last">
+                    <td>{{i+1}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.description}}</td>
+                    <td>{{product.category}}<span *ngIf="isLast">This is last</span></td>
+                    <td><button (click)="showEditForm(product)" class="btn btn-primary">Edit</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div *ngIf = "showEditProduct">
+        <app-edit-product [product]="selectedProduct" (productChange)="update($event)"></app-edit-product>
+    </div>
+    </ng-template>
+
+<ng-template #noData>
+    <h1>No data found</h1>
+
+  </ng-template> 
