@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LoginComponent } from './login/login.component';
 import { ObservableComponent } from './observable/observable.component';
 import { ProductServerComponent } from './product-server/product-server.component';
+import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/home',pathMatch:'full'},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'observable', component: ObservableComponent},
   {path: 'products-server', component:ProductServerComponent},
+  {path:'signup', component:SignUpFormComponent},
   {path:'**', component:PageNotFoundComponent}
 ];
 
