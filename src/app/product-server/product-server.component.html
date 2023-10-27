@@ -23,6 +23,7 @@
                 </tr>
             </tbody>
         </table>
+        
 
         <div *ngIf = "showEditProduct">
         <app-edit-product [product]="selectedProduct" (productChange)="update($event)"></app-edit-product>

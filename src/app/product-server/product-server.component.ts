@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../_services/product.service';
 import { Product } from '../_model/product.model';
 import { DataService } from '../_services/data.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-server',
@@ -14,15 +14,26 @@ export class ProductServerComponent implements OnInit{
   products:Product[];
   
   constructor(private productService:ProductService,
-    private ds:DataService, private router:Router){}
+    private ds:DataService, private router:Router,
+    private route:ActivatedRoute){}
+category:string;
 
   ngOnInit(): void {
-    this.productService.getProduct().subscribe({
+    this.getdata();
+    
+  }
+
+  getdata(){
+    this.route.queryParams.subscribe(params =>
+      this.category = params['category']);
+      alert(this.category);
+
+    this.productService.getProduct(this.category).subscribe({
       next:data=> this.products = data,
       error:err=>alert(err),
       complete:()=>console.log("complete")
     });
-    
+
   }
 
   

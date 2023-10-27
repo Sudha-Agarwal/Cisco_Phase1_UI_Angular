@@ -23,8 +23,7 @@ export class SignUpFormComponent {
   }
 
   submit(){
-    console.table(this.RegisterationForm.value);
-    
+    console.table(this.RegisterationForm.value);    
 
   }
 }

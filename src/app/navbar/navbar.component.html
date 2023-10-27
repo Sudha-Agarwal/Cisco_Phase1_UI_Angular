@@ -21,6 +21,23 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="'/about'">About Us</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'/pipes'">Pipes</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Products
+            </a>
+            <ul class="dropdown-menu">
+              <li *ngFor = "let item of dropdownItems1">
+                <a class="dropdown-item" [routerLink] = "item.routerLink" [queryParams] = "item.queryParams">{{item.text}}</a></li>
+             
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink] = "'/observable'">Observable</a>
+          </li>
+
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Products
@@ -31,21 +48,15 @@
              
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink] = "'/observable'">Observable</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" [routerLink] = "'/products-server'">Product Server</a>
-          </li>
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
         <ul class="navbar-nav d-flex flex-row mt-lg-0 mt-2">
-            <li class="nav-item">
-                <a routerLink="/login">Login</a>
+            <li class="nav-item">              
+                <button class="btn btn-primary" *ngIf = "isLoggedIn" (click) = "logout()">Logout</button>     
+                <a class="btn btn-primary" *ngIf = "!isLoggedIn" routerLink="/login">Login</a>
             </li>
             <li class="nav-item">
                 <a routerLink="/signup">Sign up</a>

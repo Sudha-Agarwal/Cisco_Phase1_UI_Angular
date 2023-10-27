@@ -45,4 +45,6 @@ export class BindingsComponent {
     return product.stock > 0;
     
   }
+
+  condition = "A";
 }

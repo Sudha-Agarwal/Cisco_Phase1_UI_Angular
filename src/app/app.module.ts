@@ -16,6 +16,7 @@ import { ObservableComponent } from './observable/observable.component';
 import { ProductServerComponent } from './product-server/product-server.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
     LoginComponent,
     ObservableComponent,
     ProductServerComponent,
-    SignUpFormComponent    
+    SignUpFormComponent,
+    PipesComponent    
   ],
   imports: [
     BrowserModule,

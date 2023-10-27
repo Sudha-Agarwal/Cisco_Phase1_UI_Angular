@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { ObservableComponent } from './observable/observable.component';
 import { ProductServerComponent } from './product-server/product-server.component';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/home',pathMatch:'full'},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'observable', component: ObservableComponent},
   {path: 'products-server', component:ProductServerComponent},
   {path:'signup', component:SignUpFormComponent},
+  {path: 'pipes', component:PipesComponent},
   {path:'**', component:PageNotFoundComponent}
 ];
 

@@ -40,3 +40,10 @@
         </div>
     </div>
 </div>
+
+<div [ngSwitch] = "condition">
+    <p *ngSwitchCase = "'A'">Case A</p>
+    <p *ngSwitchCase = "'B'">Case B</p>
+    <p *ngSwitchCase = "'C'">Case C</p>
+    <p *ngSwitchDefault>Default</p>
+</div>
